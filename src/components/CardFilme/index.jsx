@@ -1,19 +1,23 @@
-export default function CardFilme(){
+export default function CardFilme({ filme }){
     return(
-        <div className="w-[330px] h-[318px] flex flex-col rounded-lg bg-[#222222]">
-            <div className="w-full h-[70%] rounded-t-lg">
+        <div className="w-[330px] h-[318px] flex flex-col rounded-lg bg-[#222222] cursor-pointer border border-transparent hover:border-[#8f7bd8] transition-all duration-400 ease-in-out">
+            <div className="w-full h-[70%] rounded-t-lg relative">
                 <img
                     className="w-full h-full rounded-t-lg object-cover"
-                    src="https://th.bing.com/th/id/R.7fe2257cb7e9be762619df49653f4114?rik=dZtZkyyKNYZKwg&riu=http%3a%2f%2fimages6.fanpop.com%2fimage%2fphotos%2f40700000%2fFamily-Guy-family-guy-40727720-1280-1024.jpg&ehk=9ZB7wk1Uyhbp84C5QoEgptfHEaOkr%2bhuppRNacyGhqQ%3d&risl=&pid=ImgRaw&r=0"
-                    alt=""
+                    src={filme.banner}
+                    alt={filme.titulo}
                 />
+                <div className="absolute top-1 left-2 flex text-[#9ca3af] ">
+                    <p className="text-[17px] text-green-400 font-semibold">{filme.nota}</p>
+                    <p>/10</p>
+                </div>
             </div>
             <div className="w-full h-[30%] flex flex-col pt-2 px-4">
-                <p className="text-[20px] font-bold">Family guy</p>
-                <p  className="text-[17px] text-[#8a898c]">James Purdum</p>
+                <p className="text-[20px] font-bold">{filme.titulo}</p>
+                <p  className="text-[17px] text-[#8a898c]">{filme.diretor}</p>
                 <div className="w-full flex justify-between">
-                    <p className="text-[17px] text-[#8a898c]">1999</p>
-                    <div className="px-2 py-0 bg-[#8f7bd8]/20 text-[#8f7bd8] rounded-lg">Comédia</div>
+                    <p className="text-[17px] text-[#8a898c]">{filme.ano}</p>
+                    <div className="px-2 py-0 bg-[#8f7bd8]/20 text-[#8f7bd8] rounded-lg">{filme.genero}</div>
                 </div>
             </div>
         </div>
